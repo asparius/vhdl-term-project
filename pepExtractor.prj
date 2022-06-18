@@ -1,0 +1,3 @@
+work	"backwardtimer.vhd"
+work	"clk_generator.vhd"
+work	"dryer.vhd"

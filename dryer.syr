@@ -1,0 +1,818 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.22 secs
+ 
+--> Reading design: dryer.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "dryer.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "dryer"
+Output Format                      : NGC
+Target Device                      : xa7a100t-2I-csg324
+
+---- Source Options
+Top Module Name                    : dryer
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 32
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\ocaga\elec204\term\clk_generator.vhd" into library work
+Parsing entity <clk_divider>.
+Parsing architecture <Behavioral> of entity <clk_divider>.
+Parsing VHDL file "C:\Users\ocaga\elec204\term\backwardtimer.vhd" into library work
+Parsing entity <backwardtimer>.
+Parsing architecture <Behavioral> of entity <backwardtimer>.
+Parsing VHDL file "C:\Users\ocaga\elec204\term\dryer.vhd" into library work
+Parsing entity <dryer>.
+Parsing architecture <Behavioral> of entity <dryer>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <dryer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <clk_divider> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <backwardtimer> (architecture <Behavioral>) with generics from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <dryer>.
+    Related source file is "C:\Users\ocaga\elec204\term\dryer.vhd".
+    Found 3-bit register for signal <time_mode>.
+    Found 4-bit register for signal <mode>.
+    Found 4-bit register for signal <state>.
+    Found 1-bit register for signal <inst>.
+    Found 1-bit register for signal <curr_state<3>>.
+    Found 1-bit register for signal <curr_state<2>>.
+    Found 1-bit register for signal <curr_state<1>>.
+    Found 1-bit register for signal <curr_state<0>>.
+    Found finite state machine <FSM_0> for signal <mode>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 61                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | new_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+INFO:Xst:1799 - State 0000 is never reached in FSM <state>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | new_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0001                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_2> for signal <fsmfake0>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 61                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 1                                              |
+    | Clock              | new_clk (rising_edge)                          |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 0000                                           |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred  16 Multiplexer(s).
+	inferred   3 Finite State Machine(s).
+Unit <dryer> synthesized.
+
+Synthesizing Unit <clk_divider>.
+    Related source file is "C:\Users\ocaga\elec204\term\clk_generator.vhd".
+    Found 1-bit register for signal <new_clock_out>.
+    Found 32-bit register for signal <count>.
+    Found 32-bit adder for signal <count[31]_GND_7_o_add_0_OUT> created at line 52.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <clk_divider> synthesized.
+
+Synthesizing Unit <backwardtimer>.
+    Related source file is "C:\Users\ocaga\elec204\term\backwardtimer.vhd".
+        clockfrequency = 50
+    Found 4-bit register for signal <second1>.
+    Found 4-bit register for signal <minute0>.
+    Found 4-bit register for signal <minute1>.
+    Found 32-bit register for signal <ticks>.
+    Found 4-bit register for signal <second0>.
+    Found 32-bit adder for signal <ticks[31]_GND_8_o_add_29_OUT> created at line 150.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_10_OUT<3:0>> created at line 131.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_15_OUT<3:0>> created at line 135.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_20_OUT<3:0>> created at line 141.
+    Found 4-bit subtractor for signal <GND_8_o_GND_8_o_sub_25_OUT<3:0>> created at line 145.
+    Summary:
+	inferred   5 Adder/Subtractor(s).
+	inferred  48 D-type flip-flop(s).
+	inferred   4 Multiplexer(s).
+Unit <backwardtimer> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 6
+ 32-bit adder                                          : 2
+ 4-bit subtractor                                      : 4
+# Registers                                            : 13
+ 1-bit register                                        : 6
+ 3-bit register                                        : 1
+ 32-bit register                                       : 2
+ 4-bit register                                        : 4
+# Multiplexers                                         : 20
+ 3-bit 2-to-1 multiplexer                              : 16
+ 4-bit 2-to-1 multiplexer                              : 4
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst - The specified part-type was not generated at build time. XST is loading the full part-type and will therefore consume more CPU and memory.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+Loading device for application Rf_Device from file '7a100t.nph' in environment C:\Xilinx\14.7\ISE_DS\ISE\.
+
+Synthesizing (advanced) Unit <backwardtimer>.
+The following registers are absorbed into counter <minute1>: 1 register on signal <minute1>.
+The following registers are absorbed into counter <second1>: 1 register on signal <second1>.
+The following registers are absorbed into counter <minute0>: 1 register on signal <minute0>.
+The following registers are absorbed into counter <ticks>: 1 register on signal <ticks>.
+Unit <backwardtimer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <clk_divider>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <clk_divider> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 5
+ 32-bit up counter                                     : 2
+ 4-bit down counter                                    : 3
+# Registers                                            : 13
+ Flip-Flops                                            : 13
+# Multiplexers                                         : 18
+ 3-bit 2-to-1 multiplexer                              : 16
+ 4-bit 2-to-1 multiplexer                              : 2
+# FSMs                                                 : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_2> on signal <fsmfake0[1:5]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 00001
+ 0001  | 00010
+ 0010  | 00100
+ 0100  | 01000
+ 1000  | 10000
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_1> on signal <state[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0001  | 00
+ 0000  | unreached
+ 0010  | 01
+ 0100  | 11
+ 1000  | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <mode[1:3]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 0000  | 000
+ 0001  | 001
+ 0010  | 010
+ 0100  | 011
+ 1000  | 100
+-------------------
+WARNING:Xst:3001 - This design contains one or more registers or latches with an active
+   asynchronous set and asynchronous reset. While this circuit can be built,
+   it creates a sub-optimal implementation in terms of area, power and
+   performance. For a more optimal implementation Xilinx highly recommends
+   one of the following:
+
+          1) Remove either the set or reset from all registers and latches if
+             not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Automotive Artix7 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    curr_state_0 in unit <dryer>
+    curr_state_1 in unit <dryer>
+    curr_state_2 in unit <dryer>
+    curr_state_3 in unit <dryer>
+
+
+Optimizing unit <dryer> ...
+
+Optimizing unit <backwardtimer> ...
+WARNING:Xst:1710 - FF/Latch <timer/minute1_2> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer/minute1_0> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer/minute1_1> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer/minute1_3> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_6> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_9> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_7> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_8> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_12> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_10> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_11> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_15> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_13> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_14> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_18> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_16> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer/minute0_2> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer/minute0_1> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer/minute0_3> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <timer/second1_3> (without init value) has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_29> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_28> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_30> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_26> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_25> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_27> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_23> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_22> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_24> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_20> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_19> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_21> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <timer/ticks_17> has a constant value of 0 in block <dryer>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block dryer, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 66
+ Flip-Flops                                            : 66
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : dryer.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 213
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 37
+#      LUT2                        : 31
+#      LUT3                        : 17
+#      LUT4                        : 4
+#      LUT5                        : 16
+#      LUT6                        : 29
+#      MUXCY                       : 36
+#      VCC                         : 1
+#      XORCY                       : 39
+# FlipFlops/Latches                : 70
+#      FD                          : 29
+#      FDC                         : 11
+#      FDP                         : 6
+#      FDR                         : 20
+#      LDC                         : 4
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 28
+#      IBUF                        : 4
+#      OBUF                        : 24
+
+Device utilization summary:
+---------------------------
+
+Selected Device : xa7a100tcsg324-2i 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              70  out of  126800     0%  
+ Number of Slice LUTs:                  136  out of  63400     0%  
+    Number used as Logic:               136  out of  63400     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    140
+   Number with an unused Flip Flop:      70  out of    140    50%  
+   Number with an unused LUT:             4  out of    140     2%  
+   Number of fully used LUT-FF pairs:    66  out of    140    47%  
+   Number of unique control sets:        17
+
+IO Utilization: 
+ Number of IOs:                          29
+ Number of bonded IOBs:                  29  out of    210    13%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------+--------------------------+-------+
+Clock Signal                                   | Clock buffer(FF name)    | Load  |
+-----------------------------------------------+--------------------------+-------+
+clk_generator/new_clock_out                    | BUFG                     | 33    |
+clk                                            | BUFGP                    | 33    |
+rst_state[3]_AND_20_o(rst_state[3]_AND_20_o1:O)| NONE(*)(curr_state_3_LDC)| 1     |
+rst_state[2]_AND_22_o(rst_state[2]_AND_22_o1:O)| NONE(*)(curr_state_2_LDC)| 1     |
+rst_state[1]_AND_24_o(rst_state[1]_AND_24_o1:O)| NONE(*)(curr_state_1_LDC)| 1     |
+rst_state[0]_AND_26_o(rst_state[0]_AND_26_o1:O)| NONE(*)(curr_state_0_LDC)| 1     |
+-----------------------------------------------+--------------------------+-------+
+(*) These 4 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 2.864ns (Maximum Frequency: 349.115MHz)
+   Minimum input arrival time before clock: 1.562ns
+   Maximum output required time after clock: 1.479ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_generator/new_clock_out'
+  Clock period: 2.694ns (frequency: 371.223MHz)
+  Total number of paths / destination ports: 484 / 46
+-------------------------------------------------------------------------
+Delay:               2.694ns (Levels of Logic = 4)
+  Source:            time_mode_1 (FF)
+  Destination:       timer/second1_0 (FF)
+  Source Clock:      clk_generator/new_clock_out rising
+  Destination Clock: clk_generator/new_clock_out rising
+
+  Data Path: time_mode_1 to timer/second1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              8   0.361   0.782  time_mode_1 (time_mode_1)
+     LUT5:I0->O            2   0.097   0.360  timer/Mcount_second1_xor<0>11 (timer/Mcount_second1)
+     LUT5:I4->O            1   0.097   0.439  timer/second1_0_glue_set_SW2 (N19)
+     LUT6:I4->O            1   0.097   0.355  timer/second1_0_glue_set (timer/second1_0_glue_set)
+     LUT2:I1->O            1   0.097   0.000  timer/second1_0_rstpot (timer/second1_0_rstpot)
+     FD:D                      0.008          timer/second1_0
+    ----------------------------------------
+    Total                      2.694ns (0.757ns logic, 1.937ns route)
+                                       (28.1% logic, 71.9% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 2.864ns (frequency: 349.115MHz)
+  Total number of paths / destination ports: 1585 / 48
+-------------------------------------------------------------------------
+Delay:               2.864ns (Levels of Logic = 2)
+  Source:            clk_generator/count_15 (FF)
+  Destination:       clk_generator/count_17 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: clk_generator/count_15 to clk_generator/count_17
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.361   0.748  clk_generator/count_15 (clk_generator/count_15)
+     LUT5:I0->O            1   0.097   0.743  clk_generator/GND_7_o_count[31]_equal_2_o<31>2 (clk_generator/GND_7_o_count[31]_equal_2_o<31>1)
+     LUT6:I1->O           33   0.097   0.469  clk_generator/GND_7_o_count[31]_equal_2_o<31>7 (clk_generator/GND_7_o_count[31]_equal_2_o)
+     FDR:R                     0.349          clk_generator/count_17
+    ----------------------------------------
+    Total                      2.864ns (0.904ns logic, 1.960ns route)
+                                       (31.6% logic, 68.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_generator/new_clock_out'
+  Total number of paths / destination ports: 50 / 27
+-------------------------------------------------------------------------
+Offset:              1.562ns (Levels of Logic = 3)
+  Source:            change (PAD)
+  Destination:       time_mode_0 (FF)
+  Destination Clock: clk_generator/new_clock_out rising
+
+  Data Path: change to time_mode_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   0.001   0.610  change_IBUF (change_IBUF)
+     LUT3:I0->O            2   0.097   0.748  change_mode[3]_AND_17_o1 (change_mode[3]_AND_17_o)
+     LUT5:I0->O            1   0.097   0.000  Mmux_state[3]_time_mode[2]_wide_mux_37_OUT41 (state[3]_time_mode[2]_wide_mux_37_OUT<2>)
+     FDC:D                     0.008          time_mode_2
+    ----------------------------------------
+    Total                      1.562ns (0.203ns logic, 1.359ns route)
+                                       (13.0% logic, 87.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rst_state[3]_AND_20_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.458ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       curr_state_3_LDC (LATCH)
+  Destination Clock: rst_state[3]_AND_20_o falling
+
+  Data Path: rst to curr_state_3_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.001   0.666  rst_IBUF (rst_IBUF)
+     LUT3:I0->O            2   0.097   0.344  rst_state[3]_AND_21_o1 (rst_state[3]_AND_21_o)
+     LDC:CLR                   0.349          curr_state_3_LDC
+    ----------------------------------------
+    Total                      1.458ns (0.447ns logic, 1.011ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rst_state[2]_AND_22_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.458ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       curr_state_2_LDC (LATCH)
+  Destination Clock: rst_state[2]_AND_22_o falling
+
+  Data Path: rst to curr_state_2_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.001   0.666  rst_IBUF (rst_IBUF)
+     LUT3:I0->O            2   0.097   0.344  rst_state[2]_AND_23_o1 (rst_state[2]_AND_23_o)
+     LDC:CLR                   0.349          curr_state_2_LDC
+    ----------------------------------------
+    Total                      1.458ns (0.447ns logic, 1.011ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rst_state[1]_AND_24_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.458ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       curr_state_1_LDC (LATCH)
+  Destination Clock: rst_state[1]_AND_24_o falling
+
+  Data Path: rst to curr_state_1_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.001   0.666  rst_IBUF (rst_IBUF)
+     LUT3:I0->O            2   0.097   0.344  rst_state[1]_AND_25_o1 (rst_state[1]_AND_25_o)
+     LDC:CLR                   0.349          curr_state_1_LDC
+    ----------------------------------------
+    Total                      1.458ns (0.447ns logic, 1.011ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rst_state[0]_AND_26_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.458ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       curr_state_0_LDC (LATCH)
+  Destination Clock: rst_state[0]_AND_26_o falling
+
+  Data Path: rst to curr_state_0_LDC
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            18   0.001   0.666  rst_IBUF (rst_IBUF)
+     LUT3:I0->O            2   0.097   0.344  rst_state[0]_AND_27_o1 (rst_state[0]_AND_27_o)
+     LDC:CLR                   0.349          curr_state_0_LDC
+    ----------------------------------------
+    Total                      1.458ns (0.447ns logic, 1.011ns route)
+                                       (30.7% logic, 69.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'rst_state[3]_AND_20_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.479ns (Levels of Logic = 2)
+  Source:            curr_state_3_LDC (LATCH)
+  Destination:       curr_state<3> (PAD)
+  Source Clock:      rst_state[3]_AND_20_o falling
+
+  Data Path: curr_state_3_LDC to curr_state<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.472   0.571  curr_state_3_LDC (curr_state_3_LDC)
+     LUT3:I0->O            1   0.097   0.339  curr_state_31 (curr_state_3)
+     OBUF:I->O                 0.000          curr_state_3_OBUF (curr_state<3>)
+    ----------------------------------------
+    Total                      1.479ns (0.569ns logic, 0.910ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_generator/new_clock_out'
+  Total number of paths / destination ports: 23 / 16
+-------------------------------------------------------------------------
+Offset:              1.259ns (Levels of Logic = 2)
+  Source:            mode_FSM_FFd3 (FF)
+  Destination:       mode<2> (PAD)
+  Source Clock:      clk_generator/new_clock_out rising
+
+  Data Path: mode_FSM_FFd3 to mode<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.361   0.462  mode_FSM_FFd3 (mode_FSM_FFd3)
+     LUT2:I0->O            1   0.097   0.339  mode_mode[0]1 (mode_0_OBUF)
+     OBUF:I->O                 0.000          mode_0_OBUF (mode<0>)
+    ----------------------------------------
+    Total                      1.259ns (0.458ns logic, 0.801ns route)
+                                       (36.4% logic, 63.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'rst_state[2]_AND_22_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.479ns (Levels of Logic = 2)
+  Source:            curr_state_2_LDC (LATCH)
+  Destination:       curr_state<2> (PAD)
+  Source Clock:      rst_state[2]_AND_22_o falling
+
+  Data Path: curr_state_2_LDC to curr_state<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.472   0.571  curr_state_2_LDC (curr_state_2_LDC)
+     LUT3:I0->O            1   0.097   0.339  curr_state_21 (curr_state_2)
+     OBUF:I->O                 0.000          curr_state_2_OBUF (curr_state<2>)
+    ----------------------------------------
+    Total                      1.479ns (0.569ns logic, 0.910ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'rst_state[1]_AND_24_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.479ns (Levels of Logic = 2)
+  Source:            curr_state_1_LDC (LATCH)
+  Destination:       curr_state<1> (PAD)
+  Source Clock:      rst_state[1]_AND_24_o falling
+
+  Data Path: curr_state_1_LDC to curr_state<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.472   0.571  curr_state_1_LDC (curr_state_1_LDC)
+     LUT3:I0->O            1   0.097   0.339  curr_state_11 (curr_state_1)
+     OBUF:I->O                 0.000          curr_state_1_OBUF (curr_state<1>)
+    ----------------------------------------
+    Total                      1.479ns (0.569ns logic, 0.910ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'rst_state[0]_AND_26_o'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.479ns (Levels of Logic = 2)
+  Source:            curr_state_0_LDC (LATCH)
+  Destination:       curr_state<0> (PAD)
+  Source Clock:      rst_state[0]_AND_26_o falling
+
+  Data Path: curr_state_0_LDC to curr_state<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.472   0.571  curr_state_0_LDC (curr_state_0_LDC)
+     LUT3:I0->O            1   0.097   0.339  curr_state_01 (curr_state_0)
+     OBUF:I->O                 0.000          curr_state_0_OBUF (curr_state<0>)
+    ----------------------------------------
+    Total                      1.479ns (0.569ns logic, 0.910ns route)
+                                       (38.5% logic, 61.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    2.864|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_generator/new_clock_out
+---------------------------+---------+---------+---------+---------+
+                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------+---------+---------+---------+---------+
+clk_generator/new_clock_out|    2.694|         |         |         |
+---------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock rst_state[0]_AND_26_o
+---------------------------+---------+---------+---------+---------+
+                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------+---------+---------+---------+---------+
+clk_generator/new_clock_out|         |         |    1.692|         |
+---------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock rst_state[1]_AND_24_o
+---------------------------+---------+---------+---------+---------+
+                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------+---------+---------+---------+---------+
+clk_generator/new_clock_out|         |         |    1.692|         |
+---------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock rst_state[2]_AND_22_o
+---------------------------+---------+---------+---------+---------+
+                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------+---------+---------+---------+---------+
+clk_generator/new_clock_out|         |         |    1.692|         |
+---------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock rst_state[3]_AND_20_o
+---------------------------+---------+---------+---------+---------+
+                           | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------------------+---------+---------+---------+---------+
+clk_generator/new_clock_out|         |         |    1.692|         |
+---------------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 59.00 secs
+Total CPU time to Xst completion: 58.54 secs
+ 
+--> 
+
+Total memory usage is 5078236 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   35 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

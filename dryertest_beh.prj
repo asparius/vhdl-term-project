@@ -1,0 +1,4 @@
+vhdl work "clk_generator.vhd"
+vhdl work "backwardtimer.vhd"
+vhdl work "dryer.vhd"
+vhdl work "dryertest.vhd"

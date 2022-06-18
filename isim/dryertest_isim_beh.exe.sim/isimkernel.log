@@ -1,0 +1,29 @@
+Command line:
+   dryertest_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  59850
+
+Fri Jun 10 11:29:53 2022
+
+
+ Elaboration Time: 0.03125 sec
+
+ Current Memory Usage: 5150.27 Meg
+
+ Total Signals          : 45
+ Total Nets             : 78
+ Total Signal Drivers   : 22
+ Total Blocks           : 8
+ Total Primitive Blocks : 6
+ Total Processes        : 5
+ Total Traceable Variables  : 22
+ Total Scalar Nets and Variables : 601
+Total Line Count : 142
+
+ Total Simulation Time: 427.266 sec
+
+ Current Memory Usage: 4678.41 Meg
+
+Fri Jun 10 17:31:46 2022
+

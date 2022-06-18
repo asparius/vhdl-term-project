@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/ocaga/elec204/term/dryertest_isim_beh.exe" -prj "C:/Users/ocaga/elec204/term/dryertest_beh.prj" "work.dryertest" 

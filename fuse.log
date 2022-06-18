@@ -1,0 +1,25 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib secureip -o C:/Users/ocaga/elec204/term/dryertest_isim_beh.exe -prj C:/Users/ocaga/elec204/term/dryertest_beh.prj work.dryertest 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/Users/ocaga/elec204/term/clk_generator.vhd" into library work
+Parsing VHDL file "C:/Users/ocaga/elec204/term/backwardtimer.vhd" into library work
+Parsing VHDL file "C:/Users/ocaga/elec204/term/dryer.vhd" into library work
+Parsing VHDL file "C:/Users/ocaga/elec204/term/dryertest.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package numeric_std
+Compiling architecture behavioral of entity clk_divider [clk_divider_default]
+Compiling architecture behavioral of entity backwardtimer [\backwardtimer(50)\]
+Compiling architecture behavioral of entity dryer [dryer_default]
+Compiling architecture behavior of entity dryertest
+Time Resolution for simulation is 1ps.
+Compiled 12 VHDL Units
+Built simulation executable C:/Users/ocaga/elec204/term/dryertest_isim_beh.exe
+Fuse Memory Usage: 36936 KB
+Fuse CPU Usage: 593 ms
